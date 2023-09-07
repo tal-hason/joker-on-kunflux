@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
 
   var clientHostname = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-  res.send(`Why so Sad :-| ,New Version, My Image is ${image}:${tag} , the Server is ${host} accessed from ${clientHostname} `);
+  res.send(`Why so Sad :-| kill batman ,New Version, My Image is ${image}:${tag} , the Server is ${host} accessed from ${clientHostname} `);
 
   console.log(`Someone accessed me! --> from ${clientHostname}`)
 });

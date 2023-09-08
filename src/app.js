@@ -63,6 +63,7 @@ app.get('/image/:imageName', function (req, res) {
   }
 });
 
+
 // Function to determine content type based on file extension
 function getContentType(imageName) {
   const extension = path.extname(imageName);

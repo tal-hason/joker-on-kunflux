@@ -110,6 +110,8 @@ app.get('/metrics', function(req, res)
     res.setHeader('Content-Type',register.contentType)
 
     register.metrics().then(data => res.status(200).send(data))
+
+    console.log(`get my metrics`)
 });
 
 app.use(function(req, res, next)

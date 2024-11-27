@@ -1,8 +1,0 @@
-apiVersion: appstudio.redhat.com/v1alpha1
-kind: ReleasePlan
-metadata:
-  name: batman-release-plan
-  namespace: thason-tenant
-spec:
-  application: batman
-  target: rhtap-releng-tenant

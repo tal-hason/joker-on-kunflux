@@ -69,12 +69,12 @@ spec:
         workspace: workspace
     - name: slack-webhook-notification
       params:
-        - name: message
-          value: ":x: PipelineRun $(context.pipelineRun.name) failed!"
-        - name: secret-name
-          value: slack-cnv-ci-release
-        - name: key-name
-          value: cnv-ci-release
+      - name: message
+        value: ':x: PipelineRun $(context.pipelineRun.name) failed!'
+      - name: secret-name
+        value: slack-cnv-ci-release
+      - name: key-name
+        value: cnv-ci-release
       taskRef:
         params:
         - name: bundle
@@ -85,9 +85,10 @@ spec:
           value: Task
         resolver: bundles
       when:
-        - input: $(tasks.status)
-          operator: in
-          values: ["Failed"] 
+      - input: $(tasks.status)
+        operator: in
+        values:
+        - Failed
     params:
     - description: Source Repository URL
       name: git-url
@@ -372,7 +373,8 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-joker-on-kunflux
   workspaces:
   - name: workspace
     volumeClaimTemplate:
